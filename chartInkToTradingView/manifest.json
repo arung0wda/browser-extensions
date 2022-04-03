@@ -1,0 +1,21 @@
+{
+		
+	"name": "chartInkToTradingView",
+	"description": "Add link to trading view from chartink scanner results",
+	"version": "1",
+	"manifest_version":2,
+	"permissions":["activeTab"],
+	"content_scripts":[
+		{
+			"run_at": "document_end",
+			"matches":["https://chartink.com/screener/*"],
+			"js":["jquery.min.js","contentScript.js"]
+		}
+	],
+
+	"browser_specific_settings": {
+    	"gecko": {
+      		"id": "extension@xScruffers.github.com"
+    	}
+  	}
+}
