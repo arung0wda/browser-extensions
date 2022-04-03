@@ -2,7 +2,7 @@ var screenerListLoadWatcher = setInterval (updateLinks, 1000);
 
 
 function updateLinks(){
-    console.log("updateLinks called.");
+    console.log("updateLinks called. -" + new Date().toISOString());
 
     rows = $(".scan_results_table tr");
     $($(rows[0]).children()[2]).text("TradingView"); //Update column header
@@ -24,14 +24,14 @@ function updateLinks(){
 
 $(document).ready(function() {
     $(".run_scan_button").click(function(){
-       console.log("Run scan clicked.");
-       screenerListLoadWatcher = setInterval (updateLinks, 5000);
+       console.log("Run scan clicked. -" + new Date().toISOString());
+       screenerListLoadWatcher = setInterval (updateLinks, 2500);
     }); 
 });
 
 $(document).ready(function() {
     $(".paginate_button").click(function(e){ //Not working properly yet. TODO: update
-        console.log("Paginate clicked.");
+        console.log("Paginate clicked. -" + new Date().toISOString());
        screenerListLoadWatcher = setInterval (updateLinks, 1000);
     }); 
 });
